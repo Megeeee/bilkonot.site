@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eng 101 cal</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>ECA Calculator</h2>
+        <div class="flex-box">
+            <div class="card">
+                <div class="input">
+                    <input type="number" , id="e1" , placeholder="Lp (Out of 100)">
+                    <input type="number" , id="e2" , placeholder="Epw (Out of 100)">
+                    <input type="number" , id="e3" , placeholder="Cat (Out of 100)">
+                    <p id="demo"></p>
+                    <p id="demo1"></p>
+                    <a href="index.html"><button>Main Page</button></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+<script>
+    setInterval(() => {
+        let e1 = document.getElementById("e1").value;
+        let e2 = document.getElementById("e2").value;
+        let e3 = document.getElementById("e3").value;
+
+        let grade = (parseFloat(e1) / 100 * 5) +
+            (parseFloat(e2) / 100 * 5) +
+            (parseFloat(e3) / 100 * 20)
+        if (!isNaN(grade)) {
+            let n = 60 - grade;
+            let eca = n / 70 * 80
+            document.getElementById("demo").innerHTML = "You need " + eca.toFixed(3) + " points in ECA to pass";
+        }
+    }, 10);
+</script>
+
+</html>

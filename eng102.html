@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eng 102 cal</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Eng102 Grade Calculator</h2>
+        <div class="flex-box">
+            <div class="card">
+                <div class="input">
+                    <input type="number" , id="lib" , placeholder="Library Task (Out of 10)">
+                    <input type="number" , id="e" , placeholder="Essay (Out of 22)">
+                    <input type="number" , id="or" , placeholder="Oral Presentation (Out of 22)">
+                    <input type="number" , id="out" , placeholder="Research Paper Outline (Out of 15)">
+                    <input type="number" , id="rp" , placeholder="Research Paper (Out of 23)">
+                    <input type="number" , id="fin" , placeholder="End of Course Interview (Out of 15)">
+
+                    <p id="demo"></p>
+                    <p id="demo1"></p>
+                    <a href="index.html"><button>Main Page</button></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+<script>function cal() {
+    let lib = document.getElementById("lib").value;
+    let e = document.getElementById("e").value;
+    let or = document.getElementById("or").value;
+    let out = document.getElementById("out").value;
+    let rp = document.getElementById("rp").value;
+    let fin = document.getElementById("fin").value;
+
+
+
+    let grade = (parseFloat(lib) / 10 * 5) +
+        (parseFloat(e) / 22 * 20) +
+        (parseFloat(or) / 22 * 20) +
+        (parseFloat(out) / 15 * 10) +
+        (parseFloat(rp) / 23 * 30) +
+        (parseFloat(fin) / 15 * 15)
+
+    document.getElementById("demo").innerHTML = "Mark is =" + grade;
+}
+
+setInterval(() => {
+    let lib = document.getElementById("lib").value;
+    let e = document.getElementById("e").value;
+    let or = document.getElementById("or").value;
+    let out = document.getElementById("out").value;
+    let rp = document.getElementById("rp").value;
+    let fin = document.getElementById("fin").value;
+
+
+
+    let grade = (parseFloat(lib) / 10 * 5) +
+        (parseFloat(e) / 22 * 20) +
+        (parseFloat(or) / 22 * 20) +
+        (parseFloat(out) / 15 * 10) +
+        (parseFloat(rp) / 23 * 30) +
+        (parseFloat(fin) / 15 * 15)
+
+    if (!isNaN(grade)) {
+        document.getElementById("demo").innerHTML = "Mark is =" + grade.toFixed(3);
+    }
+
+
+    if (grade >= 95) {
+        document.getElementById("demo1").innerHTML = "A";
+    } else if (grade >= 90) {
+        document.getElementById("demo1").innerHTML = "A-";
+    } else if (grade >= 86) {
+        document.getElementById("demo1").innerHTML = "B+";
+    } else if (grade >= 82) {
+        document.getElementById("demo1").innerHTML = "B";
+    } else if (grade >= 78) {
+        document.getElementById("demo1").innerHTML = "B-";
+    } else if (grade >= 74) {
+        document.getElementById("demo1").innerHTML = "C+";
+    } else if (grade >= 70) {
+        document.getElementById("demo1").innerHTML = "C-";
+    } else if (grade >= 67) {
+        document.getElementById("demo1").innerHTML = "D+";
+    } else if (grade >= 63) {
+        document.getElementById("demo1").innerHTML = "D";
+    } else if (grade >= 59) {
+        document.getElementById("demo1").innerHTML = "D-";
+    } else {
+        document.getElementById("demo1").innerHTML = "F";
+    }
+}, 10);</script>
+
+</html>

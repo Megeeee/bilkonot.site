@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phys 102 cal</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Phys102 Grade Calculator</h2>
+        <div class="flex-box">
+            <div class="card">
+                <div class="input">
+                    <input type="number" , id="e1" , placeholder="Midterm 1 (Out of 100)">
+                    <input type="number" , id="e2" , placeholder="Midterm 2 (Out of 100)">
+                    <input type="number" , id="e7" , placeholder="Lab (Out of 100)">
+                    <input type="number" , id="e3" , placeholder="Homework (Out of 100)">
+                    <input type="number" , id="e4" , placeholder="Quiz (Out of 10)">
+                    <input type="number" , id="e5" , placeholder="Final (Out of 100)">
+                    <p id="demo"></p>
+                    <p id="demo1"></p>
+                    <a href="index.html"><button>Main Page</button></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+<script>
+    function cal() {
+        let e1 = document.getElementById("e1").value;
+        let e2 = document.getElementById("e2").value;
+        let e3 = document.getElementById("e3").value;
+        let e4 = document.getElementById("e4").value;
+        let e5 = document.getElementById("e5").value;
+        let e7 = document.getElementById("e7").value;
+
+        let grade = (parseFloat(e1) / 100 * 20) +
+            (parseFloat(e2) / 100 * 20) +
+            (parseFloat(e3) / 100 * 10) +
+            (parseFloat(e7) / 100 * 20) +
+            (parseFloat(e4)) +
+            (parseFloat(e5) / 100 * 20)
+
+        document.getElementById("demo").innerHTML = "Mark is =" + grade;
+
+
+    }
+    setInterval(() => {
+
+        let e1 = document.getElementById("e1").value;
+        let e2 = document.getElementById("e2").value;
+        let e3 = document.getElementById("e3").value;
+        let e4 = document.getElementById("e4").value;
+        let e5 = document.getElementById("e5").value;
+        let e7 = document.getElementById("e7").value;
+
+        let grade = (parseFloat(e1) / 100 * 20) +
+            (parseFloat(e2) / 100 * 20) +
+            (parseFloat(e3) / 100 * 10) +
+            (parseFloat(e7) / 100 * 20) +
+            (parseFloat(e4)) +
+            (parseFloat(e5) / 100 * 20)
+
+        if (!isNaN(grade)) {
+            document.getElementById("demo").innerHTML = "Mark is =" + grade.toFixed(3);
+        }
+
+        if (grade >= 85) {
+            document.getElementById("demo1").innerHTML = "A";
+        } else if (grade >= 80) {
+            document.getElementById("demo1").innerHTML = "A-";
+        } else if (grade >= 75) {
+            document.getElementById("demo1").innerHTML = "B+";
+        } else if (grade >= 70) {
+            document.getElementById("demo1").innerHTML = "B";
+        } else if (grade >= 65) {
+            document.getElementById("demo1").innerHTML = "B-";
+        } else if (grade >= 60) {
+            document.getElementById("demo1").innerHTML = "C+";
+        } else if (grade >= 55) {
+            document.getElementById("demo1").innerHTML = "C";
+        } else if (grade >= 50) {
+            document.getElementById("demo1").innerHTML = "C-";
+        } else if (grade >= 45) {
+            document.getElementById("demo1").innerHTML = "D+";
+        } else if (grade >= 40) {
+            document.getElementById("demo1").innerHTML = "D";
+        } else {
+            document.getElementById("demo1").innerHTML = "F";
+        }
+    }, 10);
+</script>
+
+</html>

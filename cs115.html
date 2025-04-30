@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eng 101 cal</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>CS115 Grade Calculator</h2>
+        <div class="flex-box">
+            <div class="card">
+                <div class="input">
+                    <input type="number" , id="e1" , placeholder="Midterm (Out of 100)">
+                    <input type="number" , id="e2" , placeholder="Lab (Out of 100)">
+                    <input type="number" , id="e3" , placeholder="Final (Out of 100)">
+                    <p id="demo"></p>
+                    <p id="demo1"></p>
+                    <a href="index.html"><button>Main Page</button></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+<script>
+    function cal() {
+        let e1 = document.getElementById("e1").value;
+        let e2 = document.getElementById("e2").value;
+        let e3 = document.getElementById("e3").value;
+
+        let grade = (parseFloat(e1) / 100 * 40) +
+            (parseFloat(e2) / 100 * 20) +
+            (parseFloat(e3) / 100 * 40)
+
+        document.getElementById("demo").innerHTML = "Mark is =" + grade.toFixed(3);
+
+    }
+    setInterval(() => {
+        let e1 = document.getElementById("e1").value;
+        let e2 = document.getElementById("e2").value;
+        let e3 = document.getElementById("e3").value;
+
+        let grade = (parseFloat(e1) / 100 * 40) +
+            (parseFloat(e2) / 100 * 20) +
+            (parseFloat(e3) / 100 * 40)
+        if (!isNaN(grade)) {
+            document.getElementById("demo").innerHTML = "Mark is =" + grade;
+        }
+    }, 10);
+</script>
+
+</html>
